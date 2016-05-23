@@ -45,9 +45,9 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	/// <reference path='./require.d.ts' />
+	/// <reference path="../../typings/index.d.ts" />
 	var app_1 = __webpack_require__(1);
-	app_1.default();
+	app_1.init();
 	__webpack_require__(4);
 
 
@@ -58,12 +58,13 @@
 	/// <reference path="../../typings/index.d.ts" />
 	"use strict";
 	var angular = __webpack_require__(2);
-	angular.module('myApp', []).controller('testController', ['$scope', function ($scope) {
-	        $scope.message = 'fuck you';
-	    }]);
+	var app = angular.module('myApp', []);
+	exports.app = app;
+	app.controller('testController', function ($scope) {
+	    $scope.message = 'hello angular';
+	});
 	var init = function () { return angular.element().ready(function () { return angular.bootstrap(document, ['myApp']); }); };
-	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.default = init;
+	exports.init = init;
 
 
 /***/ },
@@ -30963,8 +30964,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/less-loader/index.js!./less.less", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/less-loader/index.js!./less.less");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./less.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./less.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});

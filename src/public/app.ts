@@ -1,11 +1,13 @@
 /// <reference path="../../typings/index.d.ts" />
 
 import * as angular from 'angular';
+ 
+const app = angular.module('myApp', []);
 
-angular.module('myApp', []).controller('testController', ['$scope', function($scope) {
-    $scope.message = 'fuck you';
-}]);
+app.controller('testController', function ($scope) {
+    $scope.message = 'hello angular';
+})
 
-let init = () => angular.element().ready(() => angular.bootstrap(document, ['myApp']));
+const init = () => angular.element().ready(() => angular.bootstrap(document, ['myApp']));
 
-export default init;
+export { init, app };

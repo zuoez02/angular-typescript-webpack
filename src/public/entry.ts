@@ -1,4 +1,6 @@
-/// <reference path='./require.d.ts' />
-import init from  './app';
+/// <reference path="../../typings/index.d.ts" />
+import { app, init } from  './app';
+
 init();
-require('./less.less');
+
+require('./stylesheets/less.less');

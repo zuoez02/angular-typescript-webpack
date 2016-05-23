@@ -45,9 +45,9 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	/// <reference path="./require.d.ts" />
+	/// <reference path='./require.d.ts' />
 	var app_1 = __webpack_require__(1);
-	app_1["default"]();
+	app_1.default();
 	__webpack_require__(4);
 
 
@@ -62,8 +62,8 @@
 	        $scope.message = 'fuck you';
 	    }]);
 	var init = function () { return angular.element().ready(function () { return angular.bootstrap(document, ['myApp']); }); };
-	exports.__esModule = true;
-	exports["default"] = init;
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.default = init;
 
 
 /***/ },

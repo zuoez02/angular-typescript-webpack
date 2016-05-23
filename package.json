@@ -4,17 +4,23 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "angular": "^1.5.5",
-    "css-loader": "^0.23.1",
-    "style-loader": "^0.13.1"
+    "angular": "^1.5.5"
   },
   "devDependencies": {
+    "css-loader": "^0.23.1",
+    "install": "^0.8.1",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "npm": "^3.9.2",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
     "webpack": "^1.13.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "typings install",
+    "start": "webpack-dev-server --progress --colors --watch"
   },
   "keywords": [],
   "author": "",

@@ -48,7 +48,7 @@
 	/// <reference path="../../typings/index.d.ts" />
 	var app_1 = __webpack_require__(1);
 	app_1.init();
-	__webpack_require__(4);
+	__webpack_require__(5);
 
 
 /***/ },
@@ -60,8 +60,19 @@
 	var angular = __webpack_require__(2);
 	var app = angular.module('myApp', []);
 	exports.app = app;
+	var appHtml = __webpack_require__(4);
 	app.controller('testController', function ($scope) {
 	    $scope.message = 'hello angular';
+	});
+	app.directive('app', function () {
+	    return {
+	        restrict: 'E',
+	        replace: true,
+	        template: appHtml,
+	        compile: function comeile() {
+	            console.log('app');
+	        }
+	    };
 	});
 	var init = function () { return angular.element().ready(function () { return angular.bootstrap(document, ['myApp']); }); };
 	exports.init = init;
@@ -30950,15 +30961,21 @@
 
 /***/ },
 /* 4 */
+/***/ function(module, exports) {
+
+	module.exports = "<div><a href=\"www.baidu.com\">baidu</a></div>";
+
+/***/ },
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(5);
+	var content = __webpack_require__(6);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
+	var update = __webpack_require__(8)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -30975,10 +30992,10 @@
 	}
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)();
+	exports = module.exports = __webpack_require__(7)();
 	// imports
 
 
@@ -30989,7 +31006,7 @@
 
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports) {
 
 	/*
@@ -31045,7 +31062,7 @@
 
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
